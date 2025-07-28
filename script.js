@@ -72,7 +72,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // --- API CALL TO BACKEND ---
         try {
-            const response = await fetch('https://3bc70f6a-5123-4868-91fd-267fdf4abf37-00-1cknqrbunobzh.pike.replit.dev/consult', {
+            const response = await fetch('https://bce241b3-5cf7-4975-ad16-7d14985e94d3-00-380eir4uynk8l.pike.replit.dev/consult', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
