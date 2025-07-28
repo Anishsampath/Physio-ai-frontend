@@ -2,247 +2,145 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PhysioGuide AI - Wellness Guidance Platform</title>
-    <link href="style.css" rel="stylesheet" type="text/css" />
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <title>PhysioGuide AI</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <!-- Header -->
     <header class="header">
-        <nav class="navbar">
-            <div class="nav-brand">
-                <i class="fas fa-heartbeat"></i>
-                <span>PhysioGuide AI</span>
-            </div>
-            <ul class="nav-menu">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#services">How It Works</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#consultation" class="cta-btn">Get AI Guidance</a></li>
-            </ul>
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </nav>
+        <div class="container">
+            <h1>PhysioGuide AI</h1>
+            <p>Your Personal AI-Powered Physiotherapy Consultant</p>
+        </div>
     </header>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <h1>AI-Powered Physiotherapy Guidance</h1>
-            <p>Get instant, personalized physiotherapy guidance and motivation from our AI assistant. Receive exercise
-                suggestions and wellness tips for your fitness journey. <strong>For informational purposes only - not a
-                    replacement for professional medical treatment.</strong></p>
-            <div class="hero-buttons">
-                <a href="#consultation" class="btn-primary">Get AI Guidance</a>
-                <a href="#services" class="btn-secondary">How It Works</a>
-            </div>
-        </div>
-        <div class="hero-stats">
-            <div class="stat">
-                <span class="stat-number">10000+</span>
-                <span class="stat-label">Users Guided</span>
-            </div>
-            <div class="stat">
-                <span class="stat-number">100+</span>
-                <span class="stat-label">Exercise Protocols</span>
-            </div>
-            <div class="stat">
-                <span class="stat-number">24/7</span>
-                <span class="stat-label">AI Availability</span>
-            </div>
-        </div>
-    </section>
-
-    <!-- Services Section -->
-    <section id="services" class="services">
+    <main class="main-content">
         <div class="container">
-            <h2>How AI Physiotherapy Works</h2>
-            <div class="services-grid">
-                <div class="service-card">
-                    <i class="fas fa-robot"></i>
-                    <h3>AI Assessment</h3>
-                    <p>Our AI agent analyzes your symptoms, medical history, and condition to provide accurate
-                        assessment.</p>
-                </div>
-                <div class="service-card">
-                    <i class="fas fa-clipboard-list"></i>
-                    <h3>Personalized Protocols</h3>
-                    <p>Get customized therapy protocols and exercise routines tailored to your specific needs.</p>
-                </div>
-                <div class="service-card">
-                    <i class="fas fa-chart-line"></i>
-                    <h3>Progress Tracking</h3>
-                    <p>Monitor your recovery progress with AI-powered insights and adaptive treatment plans.</p>
-                </div>
-                <div class="service-card">
-                    <i class="fas fa-clock"></i>
-                    <h3>24/7 Availability</h3>
-                    <p>Access instant physiotherapy guidance anytime, anywhere with our AI consultation system.</p>
-                </div>
-                <div class="service-card">
-                    <i class="fas fa-brain"></i>
-                    <h3>Evidence-Based Care</h3>
-                    <p>AI recommendations based on latest research and thousands of successful treatment cases.</p>
-                </div>
-                <div class="service-card">
-                    <i class="fas fa-mobile-alt"></i>
-                    <h3>Instant Results</h3>
-                    <p>Get immediate therapy recommendations and detailed treatment protocols within minutes.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="about">
-        <div class="container">
-            <div class="about-content">
-                <div class="about-text">
-                    <h2>Why Choose PhysioGuide AI?</h2>
-                    <p>We are an AI-powered wellness guidance platform designed to provide motivational support and
-                        exercise suggestions for your physiotherapy journey. Our mission is to make wellness guidance
-                        accessible to everyone as a supportive tool alongside professional care.</p>
-                    <ul class="benefits-list">
-                        <li><i class="fas fa-check"></i> AI-powered exercise recommendations</li>
-                        <li><i class="fas fa-check"></i> Personalized wellness guidance</li>
-                        <li><i class="fas fa-check"></i> 24/7 availability and support</li>
-                        <li><i class="fas fa-check"></i> Motivational coaching approach</li>
-                        <li><i class="fas fa-check"></i> Complementary to professional treatment</li>
-                    </ul>
-                </div>
-                <div class="about-image">
-                    <div class="image-placeholder">
-                        <i class="fas fa-user-md"></i>
-                        <p>Professional Physiotherapy Care</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- AI Guidance Form -->
-    <section id="consultation" class="consultation">
-        <div class="container">
-            <h2>Get Your AI Wellness Guidance</h2>
-            <div class="disclaimer-box">
-                <i class="fas fa-info-circle"></i>
-                <strong>Important Disclaimer:</strong> This AI guidance is for informational and motivational purposes
-                only. It is not medical advice and should not replace professional healthcare consultation. Always
-                consult with a qualified physiotherapist or healthcare provider for proper diagnosis and treatment.
-            </div>
-            <form class="consultation-form" id="ai-consultation-form">
-                <div class="form-row">
+            <section class="form-section">
+                <h2>Get Your Personalized Wellness Plan</h2>
+                <form id="consultForm">
                     <div class="form-group">
                         <label for="name">Full Name *</label>
-                        <input type="text" id="name" name="name" required>
+                        <input type="text" id="name" required placeholder="e.g., Anjali Sharma">
                     </div>
+
                     <div class="form-group">
                         <label for="age">Age *</label>
-                        <input type="number" id="age" name="age" min="1" max="120" required>
+                        <input type="number" id="age" required min="1" max="120" placeholder="e.g., 35">
                     </div>
-                </div>
-                <div class="form-row">
+
                     <div class="form-group">
                         <label for="gender">Gender *</label>
-                        <select id="gender" name="gender" required>
+                        <select id="gender" required>
                             <option value="">Select Gender</option>
-                            <option value="male">Male</option>
-                            <option value="female">Female</option>
-                            <option value="other">Other</option>
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                            <option value="Other">Other</option>
                         </select>
                     </div>
+
                     <div class="form-group">
-                        <label for="weight">Weight (kg)</label>
-                        <input type="number" id="weight" name="weight" min="20" max="300">
+                        <label for="weight">Weight (kg) *</label>
+                        <input type="number" id="weight" required min="10" max="300" placeholder="e.g., 70">
                     </div>
-                </div>
-                <div class="form-group">
-                    <label for="condition">Describe Your Condition/Symptoms *</label>
-                    <textarea id="condition" name="condition" rows="4"
-                        placeholder="Please describe your pain, injury, symptoms, location, severity (1-10), when it started, what triggers it..."
-                        required></textarea>
-                </div>
-                <div class="form-row">
+
                     <div class="form-group">
-                        <label for="occupation">Occupation</label>
-                        <select id="occupation" name="occupation">
+                        <label for="height">Height (cm) *</label>
+                        <input type="number" id="height" required min="50" max="250" placeholder="e.g., 165">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="injury">Describe Your Condition/Symptoms *</label>
+                        <textarea id="injury" rows="4" required
+                            placeholder="e.g., Persistent dull ache in lower back, sometimes radiating to left leg, worse after sitting for long periods. Started 2 weeks ago."></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="occupation">Occupation *</label>
+                        <select id="occupation" required>
                             <option value="">Select Occupation</option>
-                            <option value="office-worker">Office Worker / Desk Job</option>
-                            <option value="manual-labor">Manual Labor / Construction</option>
-                            <option value="healthcare">Healthcare Professional</option>
-                            <option value="teacher">Teacher / Educator</option>
-                            <option value="driver">Driver / Transportation</option>
-                            <option value="homemaker">Homemaker</option>
-                            <option value="student">Student</option>
-                            <option value="retired">Retired</option>
-                            <option value="athlete">Professional Athlete</option>
-                            <option value="service">Service Industry</option>
-                            <option value="other">Other</option>
+                            <option value="Office Worker / Desk Job">Office Worker / Desk Job</option>
+                            <option value="Manual Labor / Construction">Manual Labor / Construction</option>
+                            <option value="Healthcare Professional">Healthcare Professional</option>
+                            <option value="Teacher / Educator">Teacher / Educator</option>
+                            <option value="Driver / Transportation">Driver / Transportation</option>
+                            <option value="Homemaker">Homemaker</option>
+                            <option value="Student">Student</option>
+                            <option value="Retired">Retired</option>
+                            <option value="Professional Athlete">Professional Athlete</option>
+                            <option value="Service Industry">Service Industry</option>
+                            <option value="Other">Other</option>
                         </select>
                     </div>
+
                     <div class="form-group">
-                        <label for="activity-level">Activity Level</label>
-                        <select id="activity-level" name="activity-level">
+                        <label for="activityLevel">Activity Level *</label>
+                        <select id="activityLevel" required>
                             <option value="">Select Activity Level</option>
-                            <option value="sedentary">Sedentary (little to no exercise)</option>
-                            <option value="lightly-active">Lightly Active (light exercise 1-3 days/week)</option>
-                            <option value="moderately-active">Moderately Active (moderate exercise 3-5 days/week)
-                            </option>
-                            <option value="very-active">Very Active (hard exercise 6-7 days/week)</option>
-                            <option value="athlete">Athlete (very hard exercise/physical job)</option>
+                            <option value="Sedentary (little to no exercise)">Sedentary (little to no exercise)</option>
+                            <option value="Lightly Active (light exercise 1-3 days/week)">Lightly Active (light exercise
+                                1-3 days/week)</option>
+                            <option value="Moderately Active (moderate exercise 3-5 days/week)">Moderately Active
+                                (moderate exercise 3-5 days/week)</option>
+                            <option value="Very Active (hard exercise 6-7 days/week)">Very Active (hard exercise 6-7
+                                days/week)</option>
+                            <option value="Athlete (very hard exercise/physical job)">Athlete (very hard
+                                exercise/physical job)</option>
                         </select>
                     </div>
-                </div>
-                <div class="form-group">
-                    <label for="lifestyle">Lifestyle Factors</label>
-                    <textarea id="lifestyle" name="lifestyle" rows="3"
-                        placeholder="Hours spent sitting/standing, work environment, hobbies, stress levels, sleep quality..."></textarea>
-                </div>
-                <div class="form-group">
-                    <label for="medical-history">Medical History</label>
-                    <textarea id="medical-history" name="medical-history" rows="3"
-                        placeholder="Any previous injuries, surgeries, chronic conditions, medications..."></textarea>
-                </div>
-                <div class="form-group">
-                    <label for="pain-level">Current Pain Level (1-10)</label>
-                    <input type="range" id="pain-level" name="pain-level" min="0" max="10" value="5"
-                        class="pain-slider">
-                    <div class="pain-scale">
-                        <span>No Pain (0)</span>
-                        <span id="pain-value">5</span>
-                        <span>Severe Pain (10)</span>
+
+                    <div class="form-group">
+                        <label for="lifestyle">Lifestyle Factors (optional):</label>
+                        <textarea id="lifestyle" rows="3"
+                            placeholder="e.g., Sedentary lifestyle, spends 8 hours daily at desk, enjoys occasional walks."></textarea>
                     </div>
+
+                    <div class="form-group">
+                        <label for="medicalHistory">Medical History (optional):</label>
+                        <textarea id="medicalHistory" rows="3"
+                            placeholder="e.g., Diagnosed with mild osteoarthritis in knees, no other major conditions."></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="constraints">Time/Equipment Constraints (optional):</label>
+                        <textarea id="constraints" rows="3"
+                            placeholder="e.g., Limited to 30 mins a day, no gym access, have resistance bands"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="painLevel">Current Pain Level (0-10) *</label>
+                        <input type="range" id="painLevel" min="0" max="10" value="5"
+                            oninput="this.nextElementSibling.value = this.value">
+                        <output>5</output>
+                        <div class="pain-labels">
+                            <span>No Pain (0)</span>
+                            <span>Severe Pain (10)</span>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="submit-button">Get AI Guidance</button>
+                </form>
+            </section>
+
+            <section class="output-section">
+                <h3>AI Wellness Guide Analysis</h3>
+                <div id="loadingSpinner" style="display: none;">
+                    <div class="spinner"></div>
+                    <p>Generating your personalized plan...</p>
                 </div>
-                <button type="submit" class="btn-primary">Get AI Guidance</button>
-            </form>
-
-            <!-- AI Response Section -->
-            <div id="ai-response" class="ai-response" style="display: none;">
-                <h3><i class="fas fa-robot"></i> AI Wellness Guide Analysis</h3>
-                <div id="ai-content"></div>
-            </div>
+                <div id="errorMessage" class="error-message"></div>
+                <div id="output">
+                </div>
+            </section>
         </div>
-    </section>
+    </main>
 
-
-
-    <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-brand">
-                    <i class="fas fa-heartbeat"></i>
-                    <span>PhysioGuide AI</span>
-                </div>
-                <p>&copy; 2025 AFH Innovations & Technology. | AI-powered wellness guidance for your physiotherapy
-                    journey.</p>
-            </div>
+            <p>&copy; 2025 AFH Innovations & Technology. All rights reserved.</p>
         </div>
     </footer>
 
