@@ -27,8 +27,16 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Form submission handling
-    const consultationForm = document.querySelector('.consultation-form');
+    // Pain level slider
+    const painSlider = document.querySelector('#pain-level');
+    const painValue = document.querySelector('#pain-value');
+    
+    painSlider?.addEventListener('input', function() {
+        painValue.textContent = this.value;
+    });
+
+    // AI Consultation Form submission handling
+    const consultationForm = document.querySelector('#ai-consultation-form');
     consultationForm?.addEventListener('submit', function(e) {
         e.preventDefault();
         
@@ -37,79 +45,141 @@ document.addEventListener('DOMContentLoaded', function() {
         const data = Object.fromEntries(formData);
         
         // Basic validation
-        if (!data.name || !data.phone || !data.city || !data.condition) {
+        if (!data.name || !data.age || !data.gender || !data.condition) {
             alert('कृपया सभी आवश्यक फील्ड भरें / Please fill all required fields');
             return;
         }
         
-        // Phone validation (Indian mobile numbers)
-        const phoneRegex = /^[6-9]\d{9}$/;
-        if (!phoneRegex.test(data.phone.replace(/\D/g, '').slice(-10))) {
-            alert('कृपया वैध मोबाइल नंबर दर्ज करें / Please enter a valid mobile number');
-            return;
-        }
-        
-        // Show success message
-        showSuccessMessage();
-        
-        // Reset form
-        this.reset();
-        
-        // In a real application, you would send this data to your server
-        console.log('Form submitted with data:', data);
+        // Show loading and get AI consultation
+        showAIConsultation(data);
     });
 
-    // Success message display
-    function showSuccessMessage() {
-        const successDiv = document.createElement('div');
-        successDiv.innerHTML = `
-            <div style="
-                position: fixed;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                background: white;
-                padding: 2rem;
-                border-radius: 10px;
-                box-shadow: 0 5px 30px rgba(0,0,0,0.3);
-                text-align: center;
-                z-index: 10000;
-                max-width: 400px;
-                width: 90%;
-            ">
-                <i class="fas fa-check-circle" style="font-size: 3rem; color: #27AE60; margin-bottom: 1rem;"></i>
-                <h3 style="color: #2E8B57; margin-bottom: 1rem;">Consultation Booked Successfully!</h3>
-                <p style="color: #7F8C8D; margin-bottom: 1.5rem;">
-                    आपका परामर्श बुक हो गया है। हमारी टीम 24 घंटे में आपसे संपर्क करेगी।<br>
-                    <em>Our team will contact you within 24 hours.</em>
-                </p>
-                <button onclick="this.parentElement.parentElement.remove()" style="
-                    background: #2E8B57;
-                    color: white;
-                    border: none;
-                    padding: 10px 20px;
-                    border-radius: 5px;
-                    cursor: pointer;
-                ">Close</button>
-            </div>
-            <div style="
-                position: fixed;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                background: rgba(0,0,0,0.5);
-                z-index: 9999;
-            " onclick="this.parentElement.remove()"></div>
-        `;
-        document.body.appendChild(successDiv);
+    // AI Consultation Response
+    function showAIConsultation(data) {
+        const aiResponse = document.querySelector('#ai-response');
+        const aiContent = document.querySelector('#ai-content');
         
-        // Auto remove after 5 seconds
+        // Show response section and loading
+        aiResponse.style.display = 'block';
+        aiContent.innerHTML = `
+            <div style="text-align: center; padding: 2rem;">
+                <div class="loading-spinner"></div>
+                <p style="margin-top: 1rem;">AI Physiotherapist is analyzing your condition...</p>
+            </div>
+        `;
+        
+        // Scroll to response
+        aiResponse.scrollIntoView({ behavior: 'smooth' });
+        
+        // Simulate AI processing (in real app, this would be an API call)
         setTimeout(() => {
-            if (successDiv.parentElement) {
-                successDiv.remove();
+            const aiAnalysis = generateAIResponse(data);
+            aiContent.innerHTML = aiAnalysis;
+        }, 3000);
+    }
+
+    // Generate AI Response (simulated)
+    function generateAIResponse(data) {
+        const conditions = {
+            'back': ['lumbar', 'spine', 'lower back', 'upper back'],
+            'knee': ['knee', 'kneecap', 'patella'],
+            'neck': ['neck', 'cervical', 'stiff neck'],
+            'shoulder': ['shoulder', 'rotator cuff', 'arm'],
+            'ankle': ['ankle', 'foot', 'heel'],
+            'hip': ['hip', 'groin', 'pelvis']
+        };
+        
+        let detectedCondition = 'general';
+        const conditionText = data.condition.toLowerCase();
+        
+        for (const [key, keywords] of Object.entries(conditions)) {
+            if (keywords.some(keyword => conditionText.includes(keyword))) {
+                detectedCondition = key;
+                break;
             }
-        }, 5000);
+        }
+        
+        const responses = {
+            back: {
+                assessment: "Based on your symptoms, you may be experiencing lower back strain or lumbar dysfunction.",
+                exercises: [
+                    "Cat-Cow Stretches - 10 repetitions, 2 sets",
+                    "Knee-to-Chest Stretches - Hold 30 seconds each leg",
+                    "Pelvic Tilts - 15 repetitions, 2 sets",
+                    "Modified Plank - Hold 20-30 seconds, 3 sets"
+                ],
+                precautions: "Avoid heavy lifting and prolonged sitting. Use proper posture."
+            },
+            knee: {
+                assessment: "Your symptoms suggest possible knee joint irritation or patellofemoral dysfunction.",
+                exercises: [
+                    "Straight Leg Raises - 10 repetitions, 3 sets",
+                    "Wall Sits - Hold 20-30 seconds, 3 sets",
+                    "Calf Raises - 15 repetitions, 2 sets",
+                    "Gentle Knee Bends - 10 repetitions, 2 sets"
+                ],
+                precautions: "Avoid stairs when possible. Ice after activities if swollen."
+            },
+            general: {
+                assessment: "Based on your description, you may benefit from general mobility and strengthening exercises.",
+                exercises: [
+                    "Gentle Range of Motion Exercises - 10 repetitions each direction",
+                    "Walking - 15-20 minutes daily",
+                    "Basic Stretching Routine - Hold 30 seconds each",
+                    "Core Strengthening - 10 repetitions, 2 sets"
+                ],
+                precautions: "Start slowly and listen to your body. Stop if pain increases."
+            }
+        };
+        
+        const response = responses[detectedCondition] || responses.general;
+        const painLevel = parseInt(data['pain-level']) || 5;
+        
+        return `
+            <div class="recommendation-card">
+                <h4><i class="fas fa-stethoscope"></i> AI Assessment</h4>
+                <p><strong>Patient:</strong> ${data.name}, ${data.age} years old</p>
+                <p><strong>Pain Level:</strong> ${painLevel}/10</p>
+                <p>${response.assessment}</p>
+            </div>
+            
+            <div class="protocol-section">
+                <h4><i class="fas fa-dumbbell"></i> Recommended Exercise Protocol</h4>
+                <ul class="exercise-list">
+                    ${response.exercises.map(exercise => `<li><i class="fas fa-play-circle"></i> ${exercise}</li>`).join('')}
+                </ul>
+            </div>
+            
+            <div class="protocol-section">
+                <h4><i class="fas fa-clock"></i> Treatment Schedule</h4>
+                <p><strong>Frequency:</strong> ${painLevel > 7 ? '2-3 times daily' : 'Once daily'}</p>
+                <p><strong>Duration:</strong> ${painLevel > 7 ? '2-3 weeks' : '1-2 weeks'}</p>
+                <p><strong>Follow-up:</strong> Re-assess in 1 week</p>
+            </div>
+            
+            <div class="warning-box">
+                <i class="fas fa-exclamation-triangle"></i>
+                <strong>Important:</strong> ${response.precautions}
+                ${painLevel > 8 ? ' Your pain level is severe - consider consulting a doctor immediately.' : ''}
+            </div>
+            
+            <div style="text-align: center; margin-top: 2rem;">
+                <button onclick="window.print()" class="btn-secondary" style="margin-right: 1rem;">
+                    <i class="fas fa-print"></i> Print Protocol
+                </button>
+                <button onclick="startNewConsultation()" class="btn-primary">
+                    <i class="fas fa-redo"></i> New Consultation
+                </button>
+            </div>
+        `;
+    }
+
+    // Start new consultation
+    function startNewConsultation() {
+        document.querySelector('#ai-consultation-form').reset();
+        document.querySelector('#ai-response').style.display = 'none';
+        document.querySelector('#consultation').scrollIntoView({ behavior: 'smooth' });
+        document.querySelector('#pain-value').textContent = '5';
     }
 
     // Navbar background change on scroll
