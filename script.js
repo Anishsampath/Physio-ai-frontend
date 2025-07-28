@@ -72,7 +72,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // --- API CALL TO BACKEND ---
         try {
-            const response = await fetch('https://bce241b3-5cf7-4975-ad16-7d14985e94d3-00-380eir4uynk8l.pike.replit.dev/>/consult', {
+            const response = await fetch('https://3bc70f6a-5123-4868-91fd-267fdf4abf37-00-1cknqrbunobzh.pike.replit.dev/consult', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -80,10 +80,13 @@ document.addEventListener('DOMContentLoaded', function() {
                 body: JSON.stringify({
                     age: data.age,
                     gender: data.gender,
-                    height: data.height, // Assuming you have height in your form
-                    weight: data.weight, // Assuming you have weight in your form
+                    occupation: data.occupation,
+                    lifestyle: data.lifestyle,
+                    weight: data.weight,
                     injury: data.condition,
-                    painLevel: data['pain-level']
+                    painLevel: data['pain-level'],
+                    activityLevel: data['activity-level'],
+                    medicalHistory: data['medical-history']
                 })
             });
 
