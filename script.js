@@ -139,8 +139,11 @@ document.addEventListener('DOMContentLoaded', function() {
             <div class="recommendation-card">
                 <h4><i class="fas fa-stethoscope"></i> AI Assessment</h4>
                 <p><strong>Patient:</strong> ${data.name}, ${data.age} years old</p>
+                <p><strong>Occupation:</strong> ${data.occupation || 'Not specified'}</p>
+                <p><strong>Activity Level:</strong> ${data['activity-level'] || 'Not specified'}</p>
                 <p><strong>Pain Level:</strong> ${painLevel}/10</p>
                 <p>${response.assessment}</p>
+                ${data.lifestyle ? `<p><strong>Lifestyle Notes:</strong> ${data.lifestyle}</p>` : ''}
             </div>
             
             <div class="protocol-section">
