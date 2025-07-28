@@ -64,7 +64,7 @@ document.addEventListener('DOMContentLoaded', function() {
         aiContent.innerHTML = `
             <div style="text-align: center; padding: 2rem;">
                 <div class="loading-spinner"></div>
-                <p style="margin-top: 1rem;">AI Physiotherapist is analyzing your condition...</p>
+                <p style="margin-top: 1rem;">AI Wellness Guide is analyzing your information...</p>
             </div>
         `;
         
@@ -101,34 +101,34 @@ document.addEventListener('DOMContentLoaded', function() {
         
         const responses = {
             back: {
-                assessment: "Based on your symptoms, you may be experiencing lower back strain or lumbar dysfunction.",
+                assessment: "Based on your description, here are some gentle exercises and wellness tips that may help support your lower back comfort. Remember, this is guidance only - consult a healthcare professional for proper assessment.",
                 exercises: [
                     "Cat-Cow Stretches - 10 repetitions, 2 sets",
                     "Knee-to-Chest Stretches - Hold 30 seconds each leg",
                     "Pelvic Tilts - 15 repetitions, 2 sets",
                     "Modified Plank - Hold 20-30 seconds, 3 sets"
                 ],
-                precautions: "Avoid heavy lifting and prolonged sitting. Use proper posture."
+                precautions: "These are general wellness suggestions. Always consult a physiotherapist for proper assessment and treatment."
             },
             knee: {
-                assessment: "Your symptoms suggest possible knee joint irritation or patellofemoral dysfunction.",
+                assessment: "Here are some gentle exercises that may help support knee wellness. This guidance is for motivational support only - seek professional evaluation for any ongoing concerns.",
                 exercises: [
                     "Straight Leg Raises - 10 repetitions, 3 sets",
                     "Wall Sits - Hold 20-30 seconds, 3 sets",
                     "Calf Raises - 15 repetitions, 2 sets",
                     "Gentle Knee Bends - 10 repetitions, 2 sets"
                 ],
-                precautions: "Avoid stairs when possible. Ice after activities if swollen."
+                precautions: "These suggestions are for general wellness support. Consult a healthcare professional for proper evaluation."
             },
             general: {
-                assessment: "Based on your description, you may benefit from general mobility and strengthening exercises.",
+                assessment: "Based on your information, here are some general wellness exercises that may support your fitness journey. This is motivational guidance only.",
                 exercises: [
                     "Gentle Range of Motion Exercises - 10 repetitions each direction",
                     "Walking - 15-20 minutes daily",
                     "Basic Stretching Routine - Hold 30 seconds each",
                     "Core Strengthening - 10 repetitions, 2 sets"
                 ],
-                precautions: "Start slowly and listen to your body. Stop if pain increases."
+                precautions: "These are general wellness suggestions. Always consult healthcare professionals for personalized treatment."
             }
         };
         
@@ -144,38 +144,38 @@ document.addEventListener('DOMContentLoaded', function() {
             </div>
             
             <div class="protocol-section">
-                <h4><i class="fas fa-dumbbell"></i> Recommended Exercise Protocol</h4>
+                <h4><i class="fas fa-dumbbell"></i> Suggested Wellness Exercises</h4>
                 <ul class="exercise-list">
                     ${response.exercises.map(exercise => `<li><i class="fas fa-play-circle"></i> ${exercise}</li>`).join('')}
                 </ul>
             </div>
             
             <div class="protocol-section">
-                <h4><i class="fas fa-clock"></i> Treatment Schedule</h4>
-                <p><strong>Frequency:</strong> ${painLevel > 7 ? '2-3 times daily' : 'Once daily'}</p>
-                <p><strong>Duration:</strong> ${painLevel > 7 ? '2-3 weeks' : '1-2 weeks'}</p>
-                <p><strong>Follow-up:</strong> Re-assess in 1 week</p>
+                <h4><i class="fas fa-clock"></i> General Guidelines</h4>
+                <p><strong>Suggested Frequency:</strong> ${painLevel > 7 ? 'Gentle movements 2-3 times daily' : 'Once daily'}</p>
+                <p><strong>General Timeframe:</strong> ${painLevel > 7 ? 'Gentle approach for 2-3 weeks' : '1-2 weeks of gradual progression'}</p>
+                <p><strong>Motivation:</strong> Track your progress and celebrate small improvements!</p>
             </div>
             
             <div class="warning-box">
                 <i class="fas fa-exclamation-triangle"></i>
-                <strong>Important:</strong> ${response.precautions}
-                ${painLevel > 8 ? ' Your pain level is severe - consider consulting a doctor immediately.' : ''}
+                <strong>Disclaimer:</strong> ${response.precautions}
+                ${painLevel > 8 ? ' Your discomfort level is high - please consult a healthcare professional immediately.' : ' Remember, this is motivational guidance, not medical treatment.'}
             </div>
             
             <div style="text-align: center; margin-top: 2rem;">
                 <button onclick="window.print()" class="btn-secondary" style="margin-right: 1rem;">
-                    <i class="fas fa-print"></i> Print Protocol
+                    <i class="fas fa-print"></i> Print Guidance
                 </button>
-                <button onclick="startNewConsultation()" class="btn-primary">
-                    <i class="fas fa-redo"></i> New Consultation
+                <button onclick="startNewGuidance()" class="btn-primary">
+                    <i class="fas fa-redo"></i> Get New Guidance
                 </button>
             </div>
         `;
     }
 
-    // Start new consultation
-    function startNewConsultation() {
+    // Start new guidance session
+    function startNewGuidance() {
         document.querySelector('#ai-consultation-form').reset();
         document.querySelector('#ai-response').style.display = 'none';
         document.querySelector('#consultation').scrollIntoView({ behavior: 'smooth' });
@@ -232,7 +232,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }, observerOptions);
 
     // Observe elements for animation
-    document.querySelectorAll('.stat-number, .service-card, .contact-item').forEach(el => {
+    document.querySelectorAll('.stat-number, .service-card').forEach(el => {
         el.style.opacity = '0';
         el.style.transform = 'translateY(20px)';
         el.style.transition = 'all 0.6s ease';

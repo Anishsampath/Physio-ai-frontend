@@ -1,4 +1,27 @@
 
+/* Add disclaimer box styles */
+.disclaimer-box {
+    background: #FFF3CD;
+    border: 1px solid #FFC107;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+}
+
+.disclaimer-box i {
+    color: #FFC107;
+    margin-right: 0.5rem;
+    font-size: 1.2rem;
+}
+
+.disclaimer-box strong {
+    color: #856404;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -517,50 +540,6 @@ body {
     margin-right: 0.5rem;
 }
 
-/* Contact Section */
-.contact {
-    padding: 80px 0;
-}
-
-.contact h2 {
-    text-align: center;
-    font-size: 2.5rem;
-    margin-bottom: 3rem;
-    color: var(--primary-color);
-}
-
-.contact-info {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-}
-
-.contact-item {
-    display: flex;
-    align-items: flex-start;
-    background: var(--bg-light);
-    padding: 2rem;
-    border-radius: 10px;
-}
-
-.contact-item i {
-    font-size: 2rem;
-    color: var(--primary-color);
-    margin-right: 1rem;
-    margin-top: 0.5rem;
-}
-
-.contact-item h3 {
-    font-size: 1.3rem;
-    margin-bottom: 0.5rem;
-    color: var(--text-dark);
-}
-
-.contact-item p {
-    color: var(--text-light);
-    margin-bottom: 0.25rem;
-}
-
 /* Footer */
 .footer {
     background: var(--text-dark);
@@ -624,10 +603,6 @@ body {
         gap: 0.5rem;
     }
     
-    .contact-info {
-        grid-template-columns: 1fr;
-    }
-    
     .navbar {
         padding: 1rem;
     }
@@ -638,8 +613,7 @@ body {
     
     .services h2,
     .about-text h2,
-    .consultation h2,
-    .contact h2 {
+    .consultation h2 {
         font-size: 2rem;
     }
 }
