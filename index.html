@@ -1,16 +1,234 @@
+
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
-  <title>replit</title>
-  <link href="style.css" rel="stylesheet" type="text/css" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PhysioConsult India - Expert Physiotherapy Care</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
-
 <body>
-  Hello world
-  <script src="script.js"></script>
-</body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-brand">
+                <i class="fas fa-heartbeat"></i>
+                <span>PhysioConsult India</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#consultation" class="cta-btn">Book Consultation</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
 
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Expert Physiotherapy Care at Your Doorstep</h1>
+            <p>Get personalized physiotherapy consultations from certified professionals across India. Recover faster with our evidence-based treatment approaches.</p>
+            <div class="hero-buttons">
+                <a href="#consultation" class="btn-primary">Book Online Consultation</a>
+                <a href="#services" class="btn-secondary">Our Services</a>
+            </div>
+        </div>
+        <div class="hero-stats">
+            <div class="stat">
+                <span class="stat-number">5000+</span>
+                <span class="stat-label">Patients Treated</span>
+            </div>
+            <div class="stat">
+                <span class="stat-number">50+</span>
+                <span class="stat-label">Expert Physiotherapists</span>
+            </div>
+            <div class="stat">
+                <span class="stat-number">25+</span>
+                <span class="stat-label">Cities Covered</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <h2>Our Specialized Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <i class="fas fa-walking"></i>
+                    <h3>Orthopedic Physiotherapy</h3>
+                    <p>Treatment for joint pain, fractures, sports injuries, and post-surgical rehabilitation.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-brain"></i>
+                    <h3>Neurological Physiotherapy</h3>
+                    <p>Specialized care for stroke, spinal cord injuries, and neurological conditions.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-heart"></i>
+                    <h3>Cardiopulmonary Physiotherapy</h3>
+                    <p>Rehabilitation for heart and lung conditions, breathing exercises, and fitness programs.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-baby"></i>
+                    <h3>Pediatric Physiotherapy</h3>
+                    <p>Specialized treatment for children with developmental delays and physical disabilities.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-home"></i>
+                    <h3>Home Physiotherapy</h3>
+                    <p>Convenient at-home treatment sessions for elderly and immobile patients.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-video"></i>
+                    <h3>Online Consultations</h3>
+                    <p>Virtual physiotherapy sessions and exercise guidance from certified professionals.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>Why Choose PhysioConsult India?</h2>
+                    <p>We are India's leading physiotherapy consultation platform, connecting patients with certified physiotherapists across the country. Our mission is to make quality physiotherapy care accessible and affordable for everyone.</p>
+                    <ul class="benefits-list">
+                        <li><i class="fas fa-check"></i> Certified and experienced physiotherapists</li>
+                        <li><i class="fas fa-check"></i> Personalized treatment plans</li>
+                        <li><i class="fas fa-check"></i> Affordable consultation fees</li>
+                        <li><i class="fas fa-check"></i> Multilingual support (Hindi, English, Regional languages)</li>
+                        <li><i class="fas fa-check"></i> Follow-up care and progress tracking</li>
+                    </ul>
+                </div>
+                <div class="about-image">
+                    <div class="image-placeholder">
+                        <i class="fas fa-user-md"></i>
+                        <p>Professional Physiotherapy Care</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Consultation Form -->
+    <section id="consultation" class="consultation">
+        <div class="container">
+            <h2>Book Your Consultation</h2>
+            <form class="consultation-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="name">Full Name *</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number *</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="age">Age</label>
+                        <input type="number" id="age" name="age" min="1" max="120">
+                    </div>
+                    <div class="form-group">
+                        <label for="city">City *</label>
+                        <select id="city" name="city" required>
+                            <option value="">Select City</option>
+                            <option value="mumbai">Mumbai</option>
+                            <option value="delhi">Delhi</option>
+                            <option value="bangalore">Bangalore</option>
+                            <option value="hyderabad">Hyderabad</option>
+                            <option value="chennai">Chennai</option>
+                            <option value="kolkata">Kolkata</option>
+                            <option value="pune">Pune</option>
+                            <option value="ahmedabad">Ahmedabad</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="condition">Primary Concern/Condition *</label>
+                    <textarea id="condition" name="condition" rows="4" placeholder="Please describe your pain, injury, or condition that requires physiotherapy..." required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="consultation-type">Preferred Consultation Type</label>
+                    <div class="radio-group">
+                        <label class="radio-label">
+                            <input type="radio" name="consultation-type" value="online" checked>
+                            <span>Online Consultation (₹300)</span>
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" name="consultation-type" value="home">
+                            <span>Home Visit (₹800 + travel)</span>
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" name="consultation-type" value="clinic">
+                            <span>Clinic Visit (₹500)</span>
+                        </label>
+                    </div>
+                </div>
+                <button type="submit" class="btn-primary">Book Consultation</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Get in Touch</h2>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <div>
+                        <h3>Call Us</h3>
+                        <p>+91 9876543210</p>
+                        <p>+91 8765432109</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <div>
+                        <h3>Email Us</h3>
+                        <p>info@physioconsultindia.com</p>
+                        <p>support@physioconsultindia.com</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-clock"></i>
+                    <div>
+                        <h3>Working Hours</h3>
+                        <p>Mon - Sat: 8:00 AM - 8:00 PM</p>
+                        <p>Sun: 10:00 AM - 6:00 PM</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <i class="fas fa-heartbeat"></i>
+                    <span>PhysioConsult India</span>
+                </div>
+                <p>&copy; 2024 PhysioConsult India. All rights reserved. | Making physiotherapy accessible across India.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
 </html>
